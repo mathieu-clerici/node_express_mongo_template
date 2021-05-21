@@ -7,7 +7,8 @@
     "prepare" : "npx husky install",
     "build": "tsc",
     "start": "nodemon",
-    "test": "jest --testEnvironment=node --runInBand ./__tests__"
+    "test": "jest --testEnvironment=node --runInBand ./__tests__",
+    "precommit": "node test.js"
   },
   "author": "",
   "dependencies": {
