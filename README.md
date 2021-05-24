@@ -1,4 +1,4 @@
-# Node Express with Mongo Docker template
+# Node & Express REST API, with Mongo Docker template
 
 - Yarn is used as package manager
 - It's setup to use Typescript (not plain old js)
