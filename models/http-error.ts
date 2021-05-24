@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 class HttpError extends Error{
     code: number;
 

@@ -5,11 +5,11 @@ import dotEnv from 'dotenv';
 import HttpError from './models/http-error';
 import usersRoutes from './routes/users';
 import permissionsRoutes from './routes/permissions';
-import rolesRoute from './routes/roles';sdkfldskf
+import rolesRoute from './routes/roles';
 
-  dotEnv.config();
+dotEnv.config();
 
-  const app = express();
+const app = express();
 
 app.use(express.json());
 
