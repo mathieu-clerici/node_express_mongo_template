@@ -22,5 +22,5 @@ This project comes with pre implemented login / signup using JWT.
 
 ## Git hooks and Husky
 
-There is a pre-commit hook configure to ensure everything that is commited build, lint and pass the tests.
+There is a pre-commit hook configured to ensure everything that is commited build, lint and pass the tests.
 Any failure in these steps would not result in a successful commit.
