@@ -1,22 +1,40 @@
 version: '3'
 services:
-  node:
-    image: node:14
-    build: .
-    command: yarn start
+
+  # Database
+  mongo:
+    image: 'mongo:4.4.6'
+    command: [--auth]
+    env_file: 
+      - ./mongo.env
+    volumes:
+      - data:/data/db
+
+  # Node express api
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'api'
     stdin_open: true
     ports:
       - 3000:3000
     volumes:
       - ./:/app
       - /app/node_modules
-    external_links:
+    env_file: 
+      - ./.env
+    depends_on: 
       - mongo
-    env_file: .env
-  mongo:
-    image: mongo:4.4.6
-    command: [--auth]
-    ports:
-      - '27017:27017'
-    volumes:
-      - ./__data__:/data/db
+
+  # Dev tool
+  #mongo-express:
+  #  image: 'mongo-express'
+  #  ports:
+  #    - '8081:8081'
+  #  environment: 
+  #    ME_CONFIG_MONGODB_ADMINUSERNAME: 'mat'
+  #    ME_CONFIG_MONGODB_ADMINPASSWORD: 'secret'
+
+volumes:
+  data:

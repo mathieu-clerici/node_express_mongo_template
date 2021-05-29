@@ -1,13 +1,9 @@
 import express from 'express';
 
-import dotEnv from 'dotenv';
-
 import HttpError from './models/http-error';
 import usersRoutes from './routes/users';
 import permissionsRoutes from './routes/permissions';
 import rolesRoute from './routes/roles';
-
-dotEnv.config();
 
 const app = express();
 
@@ -26,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 //Error handler
-app.use((error, req, res, next) => {
+app.use((error : HttpError, req, res, next) => {
 	if (res.headerSent) {
 		return next(error);
 	}
