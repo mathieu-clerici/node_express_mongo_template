@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --quiet .",
-    "prepare": "husky install",
     "build": "tsc",
     "start": "nodemon",
     "test": "jest --testEnvironment=node --runInBand ./__tests__"
@@ -28,7 +27,6 @@
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.26.0",
-    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^11.0.0",
     "mongodb-memory-server": "^6.9.6",
