@@ -6,7 +6,7 @@ services:
     image: 'mongo:4.4.6'
     command: [--auth]
     env_file: 
-      - ./mongo.env
+      - ./env/mongo.env
     volumes:
       - data:/data/db
 
@@ -20,10 +20,10 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./:/app
+      - ./src/:/app
       - /app/node_modules
     env_file: 
-      - ./.env
+      - ./env/node.env
     depends_on: 
       - mongo
 

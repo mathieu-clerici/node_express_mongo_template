@@ -1,5 +1,6 @@
 .env
 mongo.env
+node.env
 node_modules
 __data__
 yarn.lock

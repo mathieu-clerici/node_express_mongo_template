@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /app
 
-COPY . /app/
+COPY ./src/ /app/
 
 RUN yarn install
 
